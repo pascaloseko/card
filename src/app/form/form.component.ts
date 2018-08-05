@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { DataService } from '../data.service'
+import { Card } from '../card'
 
 @Component({
   selector: 'app-form',
@@ -6,10 +8,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./form.component.css']
 })
 export class FormComponent implements OnInit {
-
-  constructor() { }
+  @Input() card: Card;
+  inputNumber: string;
+ 
+  constructor(private data: DataService) { }
 
   ngOnInit() {
+    this.data.currentMessage.subscribe(message => this.inputNumber = message)
   }
 
 }

@@ -6,7 +6,12 @@
        
         <div class="form-body">
           <!-- Card Number -->
-          <input type="text" class="input is-medium" placeholder="Card Number">
+          <input 
+                [(ngModel)] = "inputNumber" 
+                type="text" 
+                class="input is-medium" 
+                placeholder="Card Number"
+                [ngModelOptions]="{standalone: true}">
        
           <!-- Date Field -->
           <div class="date-field">

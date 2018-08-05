@@ -4,15 +4,19 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { CardComponent } from './card/card.component';
 import { FormComponent } from './form/form.component';
+import { FormsModule } from '@angular/forms';
+import { CardMaskPipe } from './card-mask.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     CardComponent,
-    FormComponent
+    FormComponent,
+    CardMaskPipe
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

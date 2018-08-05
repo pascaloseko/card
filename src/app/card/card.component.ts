@@ -1,15 +1,17 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
+import { Card } from '../card';
 
 @Component({
   selector: 'app-card',
   templateUrl: './card.component.html',
   styleUrls: ['./card.component.css']
 })
-export class CardComponent implements OnInit {
+export class CardComponent {
+ cards: Card[] = [];
+ @Output() cardSelected = new EventEmitter<Card>()
+ card = new Card(".... .... .... ....","..","..","..... .....","...","hello")
 
-  constructor() { }
-
-  ngOnInit() {
-  }
-
+ onSelected(card: Card){
+   this.cardSelected.emit(card);
+ }
 }
