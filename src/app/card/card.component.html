@@ -1,6 +1,6 @@
 <div class="tile is-parent">
   <section class="container">
-    <div class="flip-container" [class.voted]="flipped">
+    <div class="flip-container" [class.flip]="flipped">
       <div class="flipper">
         <div class="front">
           <div class="card">
@@ -30,7 +30,7 @@
             <div class="card__black"></div>
             <div class="card__skyblue"></div>
             <div class="card__cvv">
-              XXX
+              {{ card.card_cvc }}
             </div>
           </div>
         </div>
@@ -82,10 +82,13 @@
         <div class="card-verification">
           <div class="cvv-input">
             <input
-                  (keyup)="flipIt($event)"
+                  (click)="flipIt()"
+                  [(ngModel)] = "card.card_cvc"
+                  maxlength="4"
                   class="input" 
                   type="text" 
-                  placeholder="CVV">
+                  placeholder="CVV"
+                  [ngModelOptions]="{standalone: true}">
           </div>
           <div class="cvv-details">
             <p>3 or 4 digits usually found <br> on the signature strip</p>

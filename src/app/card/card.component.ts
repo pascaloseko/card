@@ -10,10 +10,10 @@ export class CardComponent implements OnInit{
  cards: Card[] = [];
  inputNumber: any;
  year: any[];
-flipped = false;
+ flipped = false;
  
  @Output() cardSelected = new EventEmitter<Card>()
- card = new Card("","..","..","","...","hello")
+ card = new Card("","..","..","","","hello")
 
  // Format card number
  cardNumberFormatted(){
@@ -23,15 +23,6 @@ flipped = false;
      return numberChunks.join(' ');
    } else {
      return '';
-   }
- }
-
- // show card expiration date
- cardExpiration(){
-   if (!this.card.card_month || !this.card.card_year){
-     return '';
-   } else {
-     return this.card.card_month + '/' + this.card.card_year;
    }
  }
 
