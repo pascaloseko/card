@@ -10,6 +10,7 @@ export class CardComponent implements OnInit{
  inputNumber: any;
  color: any;
  year: any;
+ month: any;
  url: any;
  flipped = false;
  show = false;
@@ -29,11 +30,19 @@ export class CardComponent implements OnInit{
  }
 
  // return months
- months = [
-    '01', '02', '03', '04',
-    '05', '06', '07', '08',
-    '09', '10', '11', '12'
-   ];
+//  months = [
+//     '01', '02', '03', '04',
+//     '05', '06', '07', '08',
+//     '09', '10', '11', '12'
+//    ];
+
+months(){
+  return [
+        '01', '02', '03', '04',
+        '05', '06', '07', '08',
+        '09', '10', '11', '12'
+       ];
+}
 
  // return years
  years(){
@@ -80,7 +89,8 @@ export class CardComponent implements OnInit{
 
  ngOnInit(){
   this.year = this.years();
-  // console.log(this.year);
+  this.month = this.months();
+  // console.log(this.month);
  }
 
 }
