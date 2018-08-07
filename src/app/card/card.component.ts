@@ -9,7 +9,7 @@ import { Card } from '../card';
 export class CardComponent implements OnInit{
  inputNumber: any;
  color: any;
- year: any[];
+ year: any;
  url: any;
  flipped = false;
  show = false;

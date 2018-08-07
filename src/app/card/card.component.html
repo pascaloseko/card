@@ -15,7 +15,7 @@
               Valid Thru
             </div>
             <div class="card__expiration">
-               {{ month }} / {{ year?.year }}
+               {{ month }} / {{ year.year }}
             </div>
             <div class="card__name">
               {{ card.card_name }}
@@ -68,14 +68,14 @@
         <!-- Date Field -->
         <div class="date-field">
           <div class="select">
-            <select [(ngModel)] = "month" name="Month" #Month="ngModel">
+            <select [(ngModel)] = "month" name="Month">
               <option
                     *ngFor="let month of months" 
                     [value]="month">{{ month }}</option>
             </select>
           </div>
           <div class="select">
-            <select [(ngModel)]="year.year" name="Year" #Year="ngModel">
+            <select [(ngModel)]="year.year" name="Year">
               <option *ngFor="let year of year" [value]="year">{{ year }}</option>
             </select>
           </div>
