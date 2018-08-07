@@ -87,6 +87,7 @@
             <input
                   (click)="flipIt()"
                   [(ngModel)] = "card.card_cvc"
+                  appNumbersOnlyInput
                   maxlength="4"
                   class="input" 
                   type="text" 
@@ -99,7 +100,15 @@
         </div>
      
         <!-- Buttons -->
-        <button type="submit" class="button is-large is-fullwidth is-dark">Checkout</button>
+        <button (click)="show=!show" type="submit" class="button is-large is-fullwidth is-dark">Checkout</button>
+      </div><br><br>
+      <div *ngIf="show">
+        <ul>
+          <li>Credit Number: {{ card.card_number }}</li>
+          <li>Owner: {{ card.card_name }}</li>
+          <li>Expiry: {{ month }} - {{ year.year }}</li>
+          <li>CVV: {{ card.card_cvc }}</li>
+        </ul>
       </div>
     </form>
 </div>

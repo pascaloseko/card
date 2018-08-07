@@ -12,6 +12,7 @@ export class CardComponent implements OnInit{
  year: any[];
  url: any;
  flipped = false;
+ show = false;
 
 
  card = new Card("","..","..","","","hello")
@@ -75,6 +76,7 @@ export class CardComponent implements OnInit{
   }
   return type
  }
+
 
  ngOnInit(){
   this.year = this.years();
