@@ -7,12 +7,13 @@ import { Card } from '../card';
   styleUrls: ['./card.component.css']
 })
 export class CardComponent implements OnInit{
- cards: Card[] = [];
  inputNumber: any;
+ color: any;
  year: any[];
+ url: any;
  flipped = false;
- 
- @Output() cardSelected = new EventEmitter<Card>()
+
+
  card = new Card("","..","..","","","hello")
 
  // Format card number
@@ -45,12 +46,39 @@ export class CardComponent implements OnInit{
  }
 
  flipIt() {
-   this.flipped = !this.flipped;
+   this.flipped = true;
   // console.log('flipped');
+ }
+
+ flipItY(){
+   this.flipped = false;
+ }
+
+ changeColor(event: any){
+   var type = event.target.value;
+
+  if(type.startsWith('4')){
+    this.color = '#1a1f71'
+    this.url = 'https://cdn0.iconfinder.com/data/icons/credit-card-debit-card-payment-PNG/128/Visa-Curved.png'
+  } else if (type.startsWith('51')) {
+    this.color = '#ff9900'
+    this.url = 'https://cdn0.iconfinder.com/data/icons/credit-card-debit-card-payment-PNG/128/Mastercard-Curved.png'
+  } else if (type.startsWith('36')){
+    this.color = '#002663'
+    this.url = 'https://cdn0.iconfinder.com/data/icons/credit-card-debit-card-payment-PNG/128/American-Express-Curved.png'
+  } else if (type.startsWith('37')){
+    this.color = '#00a98f'
+    this.url = 'https://cdn0.iconfinder.com/data/icons/credit-card-debit-card-payment-PNG/128/Discover-Straight.png'
+  } else {
+    this.color = '#616161'
+    this.url = ''
+  }
+  return type
  }
 
  ngOnInit(){
   this.year = this.years();
-  console.log(this.year);
+  // console.log(this.year);
  }
+
 }
