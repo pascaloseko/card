@@ -5,12 +5,14 @@ import { AppComponent } from './app.component';
 import { CardComponent } from './card/card.component';
 import { FormsModule } from '@angular/forms';
 import { CardMaskPipe } from './card-mask.pipe';
+import { NumbersOnlyInputDirective } from './numbers-only-input.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
     CardComponent,
-    CardMaskPipe
+    CardMaskPipe,
+    NumbersOnlyInputDirective
   ],
   imports: [
     BrowserModule,
